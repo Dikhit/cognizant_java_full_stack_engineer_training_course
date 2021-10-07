@@ -15,7 +15,7 @@ function EstimateFixedInterestLoan()
     let R = (r/100) / 12;
     let N = document.getElementById("tenure").value;
 
-    let TIF = P * (r/10) * (N/12);
+    let TIF = parseFloat(P) * (parseFloat(r)/10) * (parseFloat(N)/12);
     let TPF = parseFloat(P) + TIF;
     let EMIF = TPF/((N/12)*12);
 
