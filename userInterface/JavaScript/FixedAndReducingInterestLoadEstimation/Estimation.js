@@ -3,9 +3,6 @@ function EstimateReducingInterestLoan(){
       totalPayment();
       totalInterest();
       EstimateFixedInterestLoan();
-
-
-    
 }
 
 function EstimateFixedInterestLoan()
@@ -15,20 +12,18 @@ function EstimateFixedInterestLoan()
     let R = (r/100) / 12;
     let N = document.getElementById("tenure").value;
 
-    let TIF = parseFloat(P) * (parseFloat(r)/10) * (parseFloat(N)/12);
-    let TPF = parseFloat(P) + TIF;
-    let EMIF = TPF/((N/12)*12);
-
-    console.log(TIF, TPF, EMIF);
+    let totalInterest = parseFloat(P) * (parseFloat(r)/100) * (parseFloat(N)/12);
+    let totalPayment = parseFloat(P) + totalInterest;
+    let EMI = totalPayment/((N/12)*12);
 
     /* Fill with required javascript code here  */
-    document.getElementById("tInterestFixed").innerHTML = TIF.toFixed(2); /*Assign total Interest value here*/
+    document.getElementById("tInterestFixed").innerHTML = totalInterest.toFixed(2); /*Assign total Interest value here*/
     
      /* Fill with required javascript code here  */
-    document.getElementById("tPaymentFixed").innerHTML = TPF.toFixed(2); /*Assign total payment value here*/
+    document.getElementById("tPaymentFixed").innerHTML = totalPayment.toFixed(2); /*Assign total payment value here*/
     
      /* Fill with required javascript code here  */
-    document.getElementById("EMIFixed").innerHTML = EMIF.toFixed(2); /*Assign emi  value here*/
+    document.getElementById("EMIFixed").innerHTML = EMI.toFixed(2); /*Assign emi  value here*/
     
     
 }
